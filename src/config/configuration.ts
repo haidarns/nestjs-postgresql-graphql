@@ -1,5 +1,3 @@
-
-
 export default () => ({
   port: parseInt(process.env.PORT, 10) || 3000,
 
@@ -15,5 +13,5 @@ export default () => ({
   graphql: {
     debug: process.env.GRAPHQL_DEBUG || true,
     playground: process.env.GRAPHQL_PLAYGROUND || true,
-  }
+  },
 });

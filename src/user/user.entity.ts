@@ -1,6 +1,12 @@
-import { BeforeInsert, BeforeUpdate, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import {
+  BeforeInsert,
+  BeforeUpdate,
+  Column,
+  Entity,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import * as Argon2 from 'argon2';
-import { Field, ObjectType } from "@nestjs/graphql";
+import { Field, ObjectType } from '@nestjs/graphql';
 
 @Entity()
 @ObjectType()
@@ -11,22 +17,22 @@ export class User {
 
   @Column({
     type: 'varchar',
-    nullable: true
+    nullable: true,
   })
   @Field()
-  fullname: string
+  fullname: string;
 
   @Column({
     type: 'varchar',
   })
-  password: string
+  password: string;
 
   @Column({
     type: 'varchar',
-    unique: true
+    unique: true,
   })
   @Field()
-  email: string
+  email: string;
 
   @BeforeInsert()
   @BeforeUpdate()

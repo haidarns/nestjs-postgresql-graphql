@@ -1,6 +1,6 @@
-import { Module } from "@nestjs/common";
-import { ConfigModule, ConfigService } from "@nestjs/config";
-import { TypeOrmModule } from "@nestjs/typeorm";
+import { Module } from '@nestjs/common';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
   imports: [
@@ -13,7 +13,7 @@ import { TypeOrmModule } from "@nestjs/typeorm";
         entities: ['**/*.entity.js'],
         synchronize: configService.get('env') == 'local',
       }),
-    })
-  ]
+    }),
+  ],
 })
 export class DbConfigModule {}
