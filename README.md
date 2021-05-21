@@ -10,6 +10,23 @@ A starter kit for NestJS development with PostgreSQL & GraphQL enabled.
 $ npm install
 ```
 
+## Migration Commands
+
+A. Create Migration
+```bash
+npm run makemigration <migration_name>
+```
+
+B. Running Migration
+```bash
+npm run migrate
+```
+
+C. Show Migration List
+```bash
+npm run typeorm migration:show
+```
+
 ## Running the app
 
 > For local development, start postgresql container first : `docker-compose up -d`
@@ -45,19 +62,20 @@ $ npm run test:cov
 
 ```
 [System Information]
-NodeJS Version : v14.16.0
-NPM Version    : 6.14.11 
+OS Version     : Linux 5.4
+NodeJS Version : v14.17.0
+NPM Version    : 6.14.13 
 
 [Nest CLI]
-Nest CLI Version : 7.5.6 
+Nest CLI Version : 7.6.0 
 
 [Nest Platform Information]
-platform-express version : 7.6.13
-graphql version          : 7.9.11
+platform-express version : 7.6.17
+graphql version          : 7.10.6
 typeorm version          : 7.1.5
-common version           : 7.6.13
+common version           : 7.6.17
 config version           : 0.6.3
-core version             : 7.6.13
+core version             : 7.6.17
 ```
 
 ## Support
