@@ -10,7 +10,8 @@ import { TypeOrmModule } from "@nestjs/typeorm";
       useFactory: (configService: ConfigService) => ({
         ...configService.get('database'),
         type: 'postgres',
-        entities: [__dirname + '/**/*.entity{.ts,.js}'],
+        entities: ['**/*.entity.js'],
+        synchronize: configService.get('env') == 'local',
       }),
     })
   ]
