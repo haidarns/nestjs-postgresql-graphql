@@ -1,4 +1,6 @@
 import {
+  AfterLoad,
+  BaseEntity,
   BeforeInsert,
   BeforeUpdate,
   Column,
@@ -10,7 +12,9 @@ import { Field, ObjectType } from '@nestjs/graphql';
 
 @Entity()
 @ObjectType()
-export class User {
+export class User extends BaseEntity {
+  private tempPassword: string;
+
   @PrimaryGeneratedColumn('uuid')
   @Field()
   id: string;
@@ -24,8 +28,9 @@ export class User {
 
   @Column({
     type: 'varchar',
+    nullable: true,
   })
-  password: string;
+  password?: string;
 
   @Column({
     type: 'varchar',
@@ -34,11 +39,24 @@ export class User {
   @Field()
   email: string;
 
+  @AfterLoad()
+  private _loadTempPassword() {
+    this.tempPassword = this.password;
+  }
+
   @BeforeInsert()
   @BeforeUpdate()
   async hashPassword() {
-    if (this.password) {
+    if (this.password !== this.tempPassword) {
       this.password = await Argon2.hash(this.password);
     }
+  }
+
+  checkPassword(plainPassword: string) {
+    return Argon2.verify(this.password, plainPassword);
+  }
+
+  static findByEmail(email: string) {
+    return this.findOne({ where: { email } });
   }
 }

@@ -62,20 +62,26 @@ $ npm run test:cov
 
 ```
 [System Information]
-OS Version     : Linux 5.10
-NodeJS Version : v14.17.4
-NPM Version    : 6.14.14 
+OS Version     : Linux 5.13
+NodeJS Version : v14.19.1
+PNPM Version    : 6.32.6 
 
 [Nest CLI]
-Nest CLI Version : 7.6.0 
+Nest CLI Version : 8.2.5 
 
 [Nest Platform Information]
-platform-express version : 7.6.18
-graphql version          : 7.11.0
-typeorm version          : 7.1.5
-common version           : 7.6.18
-config version           : 0.6.3
-core version             : 7.6.18
+platform-express version : 8.4.4
+schematics version       : 8.0.10
+passport version         : 8.2.1
+graphql version          : 10.0.8
+typeorm version          : 8.0.3
+testing version          : 8.4.4
+apollo version           : 10.0.8
+common version           : 8.4.4
+config version           : 2.0.0
+core version             : 8.4.4
+jwt version              : 8.0.0
+cli version              : 8.2.5
 ```
 
 ## Support

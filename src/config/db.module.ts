@@ -13,8 +13,7 @@ import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConne
       ): PostgresConnectionOptions => ({
         ...configService.get('database'),
         type: 'postgres',
-        entities: ['**/*.entity.js'],
-        synchronize: configService.get('env') == 'local',
+        entities: ['dist/**/*.entity.js', 'dist/**/entities/*.entity.js'],
       }),
     }),
   ],
